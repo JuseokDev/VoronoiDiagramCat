@@ -13,10 +13,12 @@ import numpy as np
 from PIL import Image
 from pathlib import Path
 
-filePath = "Downloads/Download.png"
+filePath = "./Downloads/Download.png"
 
+import downloader
+Path("./Downloads").mkdir(exist_ok=True)
 if not Path(filePath).is_file():
-    raise FileNotFoundError("필요한 파일을 찾지 못했습니다.")
+    downloader.download("https://raw.githubusercontent.com/JuseokDev/VoronoiDiagramCat/main/Downloads/Download.png", "./Downloads/Download.png")
 
 image = Image.open(filePath).convert("RGBA")
 width, height = image.size
