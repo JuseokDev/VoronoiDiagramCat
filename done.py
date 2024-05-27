@@ -1023,14 +1023,13 @@ data = [
     [[5, 0], [88, 98], [218, 0], [233, 231, 231]]
 ]
 
-import requests
+import downloader
 from pathlib import Path
 if not Path("done.json").is_file():
-    with open("done.json", "wb") as f:
-        response = requests.get("")
-        if response.status_code == 200:
-            f.write(response.content)
+    downloader.download("https://raw.githubusercontent.com/JuseokDev/VoronoiDiagramCat/main/done.json", "done.json")
+
 import json
+
 with open("done.json", "r") as f:
     data = json.load(f)
 
@@ -1040,7 +1039,6 @@ t.clearscreen()
 t.setup(width+160, height+100)
 t.bgcolor("#1A2828")
 t.colormode(255)
-
 
 t.speed(0)
 t.tracer(False)

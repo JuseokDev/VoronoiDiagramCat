@@ -13,7 +13,7 @@ import numpy as np
 from PIL import Image
 from pathlib import Path
 
-filePath = "Downloads/black-cat-6944832_1920.png"
+filePath = "Downloads/Download.png"
 
 if not Path(filePath).is_file():
     raise FileNotFoundError("필요한 파일을 찾지 못했습니다.")

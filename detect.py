@@ -23,7 +23,7 @@ img = cv2.imread("division.png")
 # 읽은 이미지를 그레이스케일(Greyscale)로 변환
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-# apply thresholding to convert the grayscale image to a binary image
+# 임계값을 적용하여 회색조 이미지를 이진 이미지로 변환
 ret,thresh = cv2.threshold(gray, 5, 255, 0)
 
 # 윤곽선 찾기
@@ -47,10 +47,8 @@ if display:
    cv2.destroyAllWindows()
 
 approxs = [[a.tolist() for a in approx] for approx in approxs]
+
 import json
+
 with open("data.json", "w") as f:
    json.dump(approxs, f, indent=4)
-
-import pickle
-with open("data.pickle", "wb") as f:
-   pickle.dump(approxs, f)

@@ -18,7 +18,7 @@ with open("data.json", "r") as f:
     data = json.load(f)
 
 # 원본 이미지 읽어오기
-image = Image.open("Downloads/black-cat-6944832_1920.png")
+image = Image.open("Downloads/Download.png")
 np_array = np.array(image)
 
 def get_centroid_coordinates(x1: float, y1: float, x2: float, y2: float, x3: float, y3: float) -> tuple[float, float]:
