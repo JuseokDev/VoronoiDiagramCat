@@ -4,6 +4,25 @@ import turtle as t
 from pathlib import Path
 
 def map(x: float, in_min: float, in_max: float, out_min: float, out_max: float) -> float:
+    """
+    Parameters
+    ----------
+    x : float
+        매핑할 변수
+    in_min : float
+        주어진 변수의 최소 범위를 지정
+    in_max : float
+        주어진 변수의 최대 범위를 지정
+    out_min : float
+        리턴될 변수의 최소 범위를 지정
+    out_max : float
+        리턴될 변수의 최대 범위를 지정
+
+    Returns
+    -------
+    float
+        지정된 범위로 매핑된 실수 값
+    """
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
 def map_coordinate(coordinate: tuple[float, float], width: float, height: float) -> tuple[float, float]:
@@ -15,6 +34,8 @@ def map_coordinate(coordinate: tuple[float, float], width: float, height: float)
     Parameters
     ----------
     coordinate : tuple
+    width : float
+    height : float
 
     Returns
     -------
@@ -28,6 +49,16 @@ def map_coordinate(coordinate: tuple[float, float], width: float, height: float)
 
 
 def draw_shape_by_vertices(vertices: list[tuple[float, float]], color_data: tuple[float, float, float]):
+    """
+    Parameters
+    ----------
+    vertices : list
+    color_data : tuple
+
+    Returns
+    -------
+    None
+    """
     t.color(color_data[0], color_data[1], color_data[2])
     t.goto(vertices[0])
     t.begin_fill()

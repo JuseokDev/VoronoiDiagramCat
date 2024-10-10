@@ -29,7 +29,7 @@ def get_nearby(y: int, x: int, distance: int) -> list | None:
     """
     Description
     -----------
-    (x, y) 좌표 주변에 있는 픽셀들을 반환 (반경 distance)
+    (x, y) 좌표 주변에 있는 픽셀들을 반환 (주변 반경 distance)
 
     Parameters
     ----------
